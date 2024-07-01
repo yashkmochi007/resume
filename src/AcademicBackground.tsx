@@ -1,5 +1,3 @@
-import React from "react";
-
 const AcademicBackground = () => (
   <ul className="academic-background">
     <li>
