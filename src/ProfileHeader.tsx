@@ -9,15 +9,25 @@ import {
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub"; // Import GitHubIcon
 import RoomIcon from "@mui/icons-material/Room"; // Import RoomIcon
 
 const ProfileHeader = () => (
-  <Card variant="outlined" sx={{ marginTop: "40px" }}>
+  <Card
+    style={{ alignSelf: "baseLine" }}
+    variant="outlined"
+    sx={{ marginTop: "40px" }}
+  >
     <CardContent>
       <Grid container spacing={2} alignItems="center">
         {/* Left side */}
         <Grid item xs={12} md={6}>
-          <Typography variant="h4" component="h1" gutterBottom>
+          <Typography
+            style={{ alignSelf: "baseLine" }}
+            variant="h4"
+            component="h1"
+            gutterBottom
+          >
             Yash Mochi
           </Typography>
         </Grid>
@@ -33,7 +43,7 @@ const ProfileHeader = () => (
               />
             </Grid>
             <Grid item>
-              <Typography variant="body1">
+              <Typography style={{ alignSelf: "baseLine" }} variant="body1">
                 <Link href="mailto:yashkmochi007@gmail.com" color="inherit">
                   yashkmochi007@gmail.com
                 </Link>
@@ -48,7 +58,9 @@ const ProfileHeader = () => (
               />
             </Grid>
             <Grid item>
-              <Typography variant="body1">+918401332179</Typography>
+              <Typography style={{ alignSelf: "baseLine" }} variant="body1">
+                +918401332179
+              </Typography>
             </Grid>
           </Grid>
           <Grid item xs={12} container spacing={1} alignItems="center">
@@ -59,7 +71,9 @@ const ProfileHeader = () => (
               />
             </Grid>
             <Grid item>
-              <Typography variant="body1">Ahmedabad, Gujarat</Typography>
+              <Typography style={{ alignSelf: "baseline" }} variant="body1">
+                Ahmedabad, Gujarat
+              </Typography>
             </Grid>
           </Grid>
           {/* LinkedIn and Stack Overflow */}
@@ -71,7 +85,7 @@ const ProfileHeader = () => (
               />
             </Grid>
             <Grid item>
-              <Typography variant="body1">
+              <Typography style={{ alignSelf: "baseLine" }} variant="body1">
                 <Link
                   href="https://linkedin.com/in/yash9274"
                   target="_blank"
@@ -90,7 +104,7 @@ const ProfileHeader = () => (
               </SvgIcon>
             </Grid>
             <Grid item>
-              <Typography variant="body1">
+              <Typography style={{ alignSelf: "baseLine" }} variant="body1">
                 <Link
                   href="https://stackoverflow.com/users/6612255/yash-mochi"
                   target="_blank"
@@ -98,6 +112,26 @@ const ProfileHeader = () => (
                   color="inherit"
                 >
                   yash-mochi
+                </Link>
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid item xs={12} container spacing={1} alignItems="center">
+            <Grid item>
+              <SvgIcon
+                component={GitHubIcon}
+                sx={{ fontSize: 20, color: "#007bff" }}
+              />
+            </Grid>
+            <Grid item>
+              <Typography style={{ alignSelf: "baseLine" }} variant="body1">
+                <Link
+                  href="https://github.com/yashkmochi007"
+                  target="_blank"
+                  rel="noopener"
+                  color="inherit"
+                >
+                  yashkmochi007
                 </Link>
               </Typography>
             </Grid>
