@@ -22,22 +22,50 @@ import MyExpertise from "./MyExpertise";
 import TechnicalSkills from "./TechnicalSkills";
 
 const skillData = [
-  { name: ".Net / C#", value: 8 },
-  { name: "React", value: 8.5 },
-  { name: "Python", value: 7 },
-  { name: "Node JS", value: 6.5 },
+  { name: "Python", value: 9 },
+  { name: "React", value: 8 },
+  { name: ".Net / C#", value: 7 },
+  { name: "Node JS", value: 6 },
   { name: "Angular", value: 5 },
-  { name: "HTML / CSS / JS / TS", value: 7 },
-  { name: "PostgreSQL / MySQL", value: 7 },
-  { name: "MongoDB / Cosmos DB", value: 5 },
-  { name: "Git / Postman / Swagger / Docker / Redis / Sonar", value: 8 },
+  { name: "HTML / CSS / JS / TS", value: 6 },
+  { name: "SQL / NoSQL", value: 7 },
+  {
+    name: "Open source tools",
+    value: 8,
+  },
+  { name: "Azure Cloud Services", value: 9 },
 ];
+
+const getKemsysExperienceSubtitle = () => {
+  const currentDate = new Date();
+  const startDate = new Date("2020-11-01");
+  const monthsWorked = Math.floor(
+    (currentDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 30)
+  );
+  const yearsWorked = Math.floor(monthsWorked / 12);
+  const remainingMonths = monthsWorked % 12;
+  return `Full Time - Nov 2020 to Present - ${yearsWorked} yrs ${remainingMonths} mo`;
+};
+
+const getTotalExperience = () => {
+  const currentDate = new Date();
+  const startDate = new Date("2017-01-01");
+  const monthsWorked = Math.floor(
+    (currentDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 30)
+  );
+  let yearsWorked = Math.floor(monthsWorked / 12);
+  const remainingMonths = monthsWorked % 12;
+  if (remainingMonths >= 6) {
+    yearsWorked += 0.5;
+  }
+  return `${yearsWorked}+ years`;
+};
 
 const experienceData = [
   {
     title: "Nov 2020",
     cardTitle: "Kemsys Technologies",
-    cardSubtitle: "Full Time - Nov 2020 to Present - 3 yrs 8 mo+",
+    cardSubtitle: getKemsysExperienceSubtitle(),
     items: [
       {
         cardTitle: "Technical Lead",
@@ -75,6 +103,13 @@ const experienceData = [
 ];
 
 const achievementsData = [
+  {
+    title: "Spotlight Award",
+    date: "Jan 2025",
+    description:
+      "For quickly understanding and building on customer's existing product, learning and introducing new technologies to solve their problem - delivering solution on very tight deadlines.",
+    icon: <FaTrophy />,
+  },
   {
     title: "Execution Excellence",
     date: "May 2024",
@@ -118,14 +153,14 @@ const achievementsData = [
 
 const keyProjectsData = [
   {
-    title: "Microsoft Azure based IOT Platform",
+    title: "Microsoft Azure based AIOT Platform",
     icon: <AiOutlineApi />,
     description: (
       <>
         <p>
-          Led a team in developing a comprehensive Remote Device Management
-          Platform with multi-tenancy support, leveraging Azure services, .NET,
-          Node.js, and React. This platform is designed for{" "}
+          Led a team in developing a comprehensive AI Enabled Remote Device
+          Management Platform with multi-tenancy support, leveraging Azure
+          services, .NET, Node.js, and React. This platform is designed for{" "}
           <strong>smart city and manufacturing industry </strong>clients and
           includes the following features:
         </p>
@@ -151,16 +186,129 @@ const keyProjectsData = [
             server and custom PKI server for secure, certificate-based
             provisioning.
           </li>
+          <li>
+            Implemented role-based access control and tenant-wise data isolation
+            to ensure secure and compliant multi-tenant operations.
+          </li>
+          <li>
+            Enabled predictive maintenance and anomaly detection by integrating
+            ML models deployed via Azure Databricks and Azure ML.
+          </li>
         </ul>
         <p>
-          This project showcases my ability to lead and deliver robust IoT
+          <b>Azure Services used:</b>
+          <table border={1} width={"100%"} style={{ textAlign: "center" }}>
+            <tr>
+              <td>IoT Hub</td>
+              <td>Azure Functions</td>
+              <td>Blob Storage</td>
+            </tr>
+            <tr>
+              <td>Cosmos DB</td>
+              <td>Event Hubs</td>
+              <td>Key Vault</td>
+            </tr>
+            <tr>
+              <td>App Service</td>
+              <td>Monitor</td>
+              <td>Logic Apps</td>
+            </tr>
+            <tr>
+              <td>DevOps</td>
+              <td>Service Bus</td>
+              <td>Event Grid</td>
+            </tr>
+            <tr>
+              <td>API Management</td>
+              <td>Application Insights</td>
+              <td>Container Registry</td>
+            </tr>
+            <tr>
+              <td>Virtual Network</td>
+              <td>Databricks</td>
+              <td>Entra</td>
+            </tr>
+            <tr>
+              <td>Firewall</td>
+              <td>Security Center</td>
+              <td>Sentinel</td>
+            </tr>
+            <tr>
+              <td>Policy</td>
+              <td>Resource Manager</td>
+              <td>Virtual Machines</td>
+            </tr>
+            <tr>
+              <td>PostgreSQL</td>
+              <td>Redis Cache</td>
+              <td>Stream Analytics</td>
+            </tr>
+            <tr>
+              <td>Data Lake</td>
+              <td>VPN Gateway</td>
+              <td>ExpressRoute</td>
+            </tr>
+            <tr>
+              <td>Traffic Manager</td>
+              <td>Application Gateway</td>
+              <td>And many more...</td>
+            </tr>
+          </table>
+        </p>
+        <p>
+          This project showcases my ability to lead and deliver robust AIoT
           solutions, demonstrating expertise in cloud technologies, full-stack
           development, and IoT security.
         </p>
       </>
     ),
   },
+  {
+    title: "Azure + ML Based ETL Pipeline",
+    icon: <AiOutlineCloud />,
+    description: (
+      <>
+        <p>
+          At Kemsys, I had the opportunity to work on an client project for
+          processing and analyzing large datasets using Azure services and
+          machine learning. The project involved building an ETL pipeline that
+          ingests data from various sources, processes it, and applies machine
+          learning models to derive insights. The key components of the project
+          included: Azure Durable Functions, Databricks, Container app etcc..
+        </p>
+        <p>
+          <strong>Key Contributions:</strong>
+        </p>
+        <ul>
+          <li>
+            <strong>ETL Pipeline Development:</strong> Developed a python based
+            ETL pipeline using Azure Durable Functions to automate data
+            transformation for machine learning.
+          </li>
+          <li>
+            <strong>Terraform Script Development:</strong> Infra automation
+            script with modular approach to deploy the ETL pipeline and related
+            resources on Azure cloud.
+          </li>
+          <li>
+            Optimized data processing workflows in Azure Databricks to handle
+            millions of records efficiently for downstream ML tasks.
+          </li>
+          <li>
+            Collaborated with cross-functional teams to ensure secure, scalable,
+            and maintainable deployment across multiple environments.
+          </li>
+        </ul>
+        <p>
+          This project enhanced my skills in IoT platform development, cloud
+          services integration, and full-stack development.
+        </p>
+      </>
+    ),
+  },
+];
 
+const keyProjectsData2 = [
   {
     title: "Azure and Amazon dependent IOT Framework",
     icon: <AiOutlineCloud />,
@@ -194,6 +342,18 @@ const keyProjectsData = [
             on-premise VM-based .NET applications, as well as Python-based AWS
             Lambda functions.
           </li>
+          <li>
+            Designed a modular architecture to support plug-and-play integration
+            with multiple cloud and edge environments.
+          </li>
+          <li>
+            Implemented secure data transmission using MQTT and REST protocols
+            with proper encryption and authentication mechanisms.
+          </li>
+          <li>
+            Conducted benchmarking and performance testing across all three
+            variants to ensure scalability and reliability under varying loads.
+          </li>
         </ul>
         <p>
           This project enhanced my skills in IoT platform development, cloud
@@ -218,6 +378,14 @@ const keyProjectsData = [
           <li>Created interfaces for managing bank account maintenance.</li>
           <li>Implemented features for handling transaction charges.</li>
           <li>Designed and maintained a partner directory.</li>
+          <li>
+            Integrated RESTful APIs to ensure seamless data flow between
+            frontend and backend services.
+          </li>
+          <li>
+            Participated in code reviews and optimization efforts to enhance
+            application performance and maintainability.
+          </li>
           <li>
             Worked closely with a team to ensure timely and efficient project
             delivery.
@@ -252,6 +420,14 @@ const keyProjectsData = [
             Enhanced marine business management capabilities through a
             multi-tenancy app tailored for the client's requirements.
           </li>
+          <li>
+            Implemented role-based access control for secure and personalized
+            user experiences.
+          </li>
+          <li>
+            Optimized API integrations and data handling to improve app
+            responsiveness and reliability in low-connectivity environments.
+          </li>
         </ul>
       </>
     ),
@@ -265,7 +441,7 @@ const Resume: React.FC = () => {
       <Divider />
       <Grid container spacing={4} mt={1}>
         <Grid item xs={12} md={6}>
-          <MyExpertise />
+          <MyExpertise totalExp={getTotalExperience()} />
         </Grid>
         <Grid item xs={12} md={6}>
           <CardWidget title="Technical Skills">
@@ -276,7 +452,7 @@ const Resume: React.FC = () => {
           <Card variant="outlined">
             <CardContent>
               <Typography variant="h5" component="h2" gutterBottom>
-                Experience (7.5+ Years)
+                Experience ({getTotalExperience()})
               </Typography>
               <Box display="flex" flexDirection="row">
                 {experienceData.map((experience, index) => (
@@ -317,18 +493,36 @@ const Resume: React.FC = () => {
         <Grid item xs={12}>
           <CardWidget title="Key Projects">
             <Grid container spacing={2}>
-              {keyProjectsData.map((project, index) => (
-                <Grid item xs={12} sm={6} key={index}>
-                  <ProjectCard
-                    title={project.title}
-                    icon={project.icon}
-                    description={project.description}
-                  />
+              <Grid item xs={12} sm={6}>
+                <Grid container spacing={2}>
+                  {keyProjectsData.map((project, index) => (
+                    <Grid item xs={12} key={index}>
+                      <ProjectCard
+                        title={project.title}
+                        icon={project.icon}
+                        description={project.description}
+                      />
+                    </Grid>
+                  ))}
                 </Grid>
-              ))}
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <Grid container spacing={2}>
+                  {keyProjectsData2.map((project, index) => (
+                    <Grid item xs={12} key={index}>
+                      <ProjectCard
+                        title={project.title}
+                        icon={project.icon}
+                        description={project.description}
+                      />
+                    </Grid>
+                  ))}
+                </Grid>
+              </Grid>
             </Grid>
           </CardWidget>
         </Grid>
+
         <Grid item xs={12} mb={4}>
           <CardWidget title="Achievements">
             {achievementsData.map((achievement, index) => (
@@ -339,7 +533,7 @@ const Resume: React.FC = () => {
                 <Box>
                   <Typography variant="h6">{achievement.title}</Typography>
                   <Typography variant="subtitle2">
-                    {achievement.date} - {achievement.description}
+                    <b>{achievement.date}</b> - {achievement.description}
                   </Typography>
                 </Box>
               </Box>

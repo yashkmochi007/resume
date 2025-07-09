@@ -1,11 +1,15 @@
 import { Typography } from "@mui/material";
 import { CardWidget } from "./Resume";
 
-const MyExpertise: React.FC = () => {
+interface MyExpertiseProps extends React.PropsWithChildren {
+  totalExp: string;
+}
+
+const MyExpertise: React.FC<MyExpertiseProps> = ({ totalExp }) => {
   return (
     <CardWidget title="My Expertise">
       <Typography variant="body1">
-        As a Technical Lead with over 7.5 years of experience in the Smart City
+        As a Technical Lead with over {totalExp} of experience in the Smart City
         & Industrial IoT domains, I have a proven track record of leading teams
         to develop and deploy comprehensive IoT solutions. My expertise spans
         across the entire IoT technology stack including Wired & Wireless
