@@ -1,9 +1,9 @@
 {
-  "name": "my-resume",
+  "name": "resume",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "homepage": "https://yashkmochi007.github.io/my-resume",
+  "homepage": "https://yashkmochi007.github.io/resume",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

@@ -1,5 +1,5 @@
 
-# [Live Demo](https://yashkmochi007.github.io/my-resume)
+# [Live Demo](https://yashkmochi007.github.io/resume)
 
 # React + TypeScript + Vite
 
